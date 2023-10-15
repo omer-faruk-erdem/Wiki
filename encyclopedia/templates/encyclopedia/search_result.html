@@ -1,0 +1,13 @@
+{% extends "encyclopedia/layout.html" %}
+
+
+{% block body %}
+    <h1> Search Results </h1>
+
+    <ul>
+        {% for page in search_results %}
+            <li>  <a href = "{% url  'link_redirect' page %}  "> {{ page }} </a> </li>
+        {% endfor %}
+    </ul>
+    {{ not_found_message }}
+{% endblock %}
